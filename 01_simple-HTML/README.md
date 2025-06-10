@@ -14,6 +14,8 @@ I have created web apps that had these elements before, so I had a bit of a head
 
 HTML file: [index_human.html](index_human.html)
 
+Time: < 1 hour
+
 ### LLM mode
 I used GitHub Copilot chat in Visual Studio Code.  See: [Getting started with Copilot in VS Code](https://code.visualstudio.com/docs/copilot/getting-started)
 
@@ -25,6 +27,8 @@ My chat inputs:
 3. Add Javascript so a user can drag the edge of the left_menu_div to make that div wider and the main_div narrower
 
 Generated HTML file: [index_copilot.html](index_copilot.html)
+
+Time: < 15 min
 
 <p>&nbsp;</p>
 
