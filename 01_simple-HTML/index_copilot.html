@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Left Menu Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+        }
+        #left_menu_div {
+            width: 200px;
+            background-color: #b7e5b4; /* soft green */
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+            border-right: 2px solid #ffe066; /* pastel yellow accent */
+            position: relative;
+        }
+        #left_menu_resizer {
+            position: absolute;
+            top: 0;
+            right: -4px;
+            width: 8px;
+            height: 100%;
+            cursor: ew-resize;
+            z-index: 10;
+        }
+        #main_div {
+            flex: 1;
+            padding: 24px;
+            background: #fffbe6; /* light pastel yellow */
+            height: 100vh;
+            overflow: auto;
+            color: #4d6c3b; /* gentle green for text */
+        }
+    </style>
+</head>
+<body>
+    <div id="left_menu_div">
+        <div id="left_menu_resizer"></div>
+        <!-- Left menu content here -->
+    </div>
+    <div id="main_div">
+        <!-- Main content here -->
+    </div>
+    <script>
+        const leftMenu = document.getElementById('left_menu_div');
+        const resizer = document.getElementById('left_menu_resizer');
+        let isResizing = false;
+
+        resizer.addEventListener('mousedown', function(e) {
+            isResizing = true;
+            document.body.style.cursor = 'ew-resize';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isResizing) return;
+            let newWidth = e.clientX;
+            // Set minimum and maximum width
+            if (newWidth < 100) newWidth = 100;
+            if (newWidth > 500) newWidth = 500;
+            leftMenu.style.width = newWidth + 'px';
+        });
+
+        document.addEventListener('mouseup', function(e) {
+            if (isResizing) {
+                isResizing = false;
+                document.body.style.cursor = '';
+            }
+        });
+    </script>
+</body>
+</html>
