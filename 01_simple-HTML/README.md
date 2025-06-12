@@ -43,8 +43,6 @@ Video: *working...*
 
 ## Analysis, remarks
 
-## Analysis, remarks
-
 ### Things I had to look up
 Even though I had done something like this before, I forgot a few things or had to look some things up:
 - To choose a palette, I used this web page: https://coolors.co/palettes/trending
