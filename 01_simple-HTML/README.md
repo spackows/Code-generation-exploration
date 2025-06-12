@@ -33,6 +33,16 @@ Time: < 15 min
 <p>&nbsp;</p>
 
 
+## Testing
+The HTML files (human and generated) were tested in Firefox.
+
+Video: *working...*
+
+<p>&nbsp;</p>
+
+
+## Analysis, remarks
+
 ## Analysis, remarks
 
 ### Things I had to look up
