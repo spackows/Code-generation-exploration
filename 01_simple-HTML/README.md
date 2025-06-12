@@ -17,7 +17,7 @@ HTML file: [index_human.html](index_human.html)
 Time: < 1 hour
 
 ### LLM mode
-I used GitHub Copilot chat in Visual Studio Code.  See: [Getting started with Copilot in VS Code](https://code.visualstudio.com/docs/copilot/getting-started)
+I used GitHub Copilot chat in Visual Studio Code, with the default model, GPT-4.1.  See: [Getting started with Copilot in VS Code](https://code.visualstudio.com/docs/copilot/getting-started)
 
 I ended up entering three inputs to the chat, accepting the generated code each time.
 
