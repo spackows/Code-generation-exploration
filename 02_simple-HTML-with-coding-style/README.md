@@ -21,7 +21,7 @@ Time: < 1 hour
 ### LLM mode
 I used GitHub Copilot chat in Visual Studio Code, with the default model, GPT-4.1.
 
-I specified coding style guidelines in an instructions file: [instructions.md](instructions.md)
+I specified coding style guidelines in an instructions file: [instructions.md](instructions.md.txt)
 
 See: [Customize AI code generation](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features#_customize-ai-code-generation)
 
