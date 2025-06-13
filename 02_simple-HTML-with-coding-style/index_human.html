@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 
+{
+margin: 0px;
+padding: 0px;
+font-family: Helvetica, Arial, sans-serif;
+overflow-y: none;
+}
+#left_menu_div 
+{
+margin: 0px;
+padding: 0px;
+position: absolute;
+top: 0px;
+width: 200px;
+bottom: 0px;
+left: 0px;
+background: #caffbf;
+}
+#resize_div
+{
+margin: 0px;
+padding: 0px;
+position: absolute;
+top: 0px;
+width: 5px;
+bottom: 0px;
+left: 200px;
+background: #ffd6a5;
+cursor: ew-resize;
+}
+#main_div 
+{
+margin: 0px;
+padding: 0px;
+position: absolute;
+top: 0px;
+right: 0px;
+bottom: 0px;
+left: 205px;
+background: #fdffb6;
+}
+</style>
+</head>
+
+<body>
+
+<div id="left_menu_div"></div>
+<div id="resize_div"></div>
+<div id="main_div"></div>
+
+<script>
+
+var g_resizer_width = 5;
+var g_b_resizing = false;
+var g_prev_mouse_x = 0;
+
+function startResizing( event )
+{
+    g_prev_mouse_x = event.pageX;
+    g_b_resizing = true;
+}
+
+function stopResizing( event )
+{
+    g_b_resizing = false;
+}
+
+function trackMouse( event )
+{
+    if( !g_b_resizing )
+    {
+        return;
+    }
+    var mouse_x = event.pageX;
+    var x_diff = mouse_x - g_prev_mouse_x;
+    var prev_width = parseInt( document.getElementById( "left_menu_div" ).offsetWidth );
+    document.getElementById( "left_menu_div" ).style.width = ( prev_width + x_diff ) + "px";
+    document.getElementById( "resize_div"    ).style.left  = ( prev_width + x_diff ) + "px";
+    document.getElementById( "main_div"      ).style.left  = ( prev_width + x_diff + g_resizer_width ) + "px";
+    g_prev_mouse_x = mouse_x;
+}
+
+document.getElementById( "resize_div" ).addEventListener( "mousedown", startResizing );
+document.body.addEventListener( "mousemove", trackMouse );
+document.body.addEventListener( "mouseup", stopResizing );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Experiment 02</title>
+<style>
+#left_menu_div
+{
+width: 180px;
+height: 100vh;
+background-color: #b8e1c5;
+float: left;
+position: relative;
+}
+
+#left_menu_resizer
+{
+width: 6px;
+height: 100vh;
+background-color: #a3d9b1;
+cursor: ew-resize;
+position: absolute;
+top: 0;
+right: 0;
+z-index: 2;
+}
+
+#main_div
+{
+margin-left: 180px;
+padding: 24px;
+height: 100vh;
+background-color: #fffbe7;
+transition: margin-left 0.1s;
+}
+
+body
+{
+margin: 0;
+padding: 0;
+font-family: "Segoe UI", "Arial", sans-serif;
+}
+</style>
+</head>
+<body>
+<div id="left_menu_div">
+Left Menu
+<div id="left_menu_resizer"></div>
+</div>
+<div id="main_div">
+Main Content
+</div>
+<script>
+var g_is_resizing = false;
+var g_start_x = 0;
+var g_start_width = 0;
+
+document.getElementById( "left_menu_resizer" ).addEventListener( "mousedown", function( e )
+{
+    g_is_resizing = true;
+    g_start_x = e.clientX;
+    g_start_width = document.getElementById( "left_menu_div" ).offsetWidth;
+    document.body.style.cursor = "ew-resize";
+
+} );
+
+document.addEventListener( "mousemove", function( e )
+{
+    if ( g_is_resizing )
+    {
+        var new_width = g_start_width + ( e.clientX - g_start_x );
+        if ( new_width < 80 )
+        {
+            new_width = 80;
+        }
+        if ( new_width > 400 )
+        {
+            new_width = 400;
+        }
+        document.getElementById( "left_menu_div" ).style.width = new_width + "px";
+        document.getElementById( "main_div" ).style.marginLeft = new_width + "px";
+    }
+
+} );
+
+document.addEventListener( "mouseup", function( e )
+{
+    if ( g_is_resizing )
+    {
+        g_is_resizing = false;
+        document.body.style.cursor = "";
+    }
+
+} );
+</script>
+</body>
+</html>
