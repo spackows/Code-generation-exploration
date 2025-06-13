@@ -34,7 +34,7 @@ My chat inputs:
 
 Generated HTML file: [index_copilot.html](index_copilot.html)
 
-**Note:** I had to experiment with the instructions file to get the generated output in the format I wanted.  That took some time.  But that cost would be a one-time cost.  Future projects could use the same `instructions.md` file.
+**Note:** I had to experiment with the instructions file to get the generated output close to the format I wanted.  That took some time.  But that cost would be a one-time cost.  Future projects could use the same `instructions.md` file.
 
 Time: < 1 hour
 
