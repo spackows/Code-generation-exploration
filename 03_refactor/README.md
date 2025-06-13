@@ -38,8 +38,6 @@ Video: ...
 
 ## Analysis, remarks
 
-### Some code appeared and dissappeared without being highlighted!
-
 ### The refactoring sometimes made things worse instead of better
 
 
