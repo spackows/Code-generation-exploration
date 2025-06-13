@@ -34,9 +34,11 @@ Time: < 15 min
 
 
 ## Testing
-The HTML files (human and generated) were tested in Firefox.
+The HTML files were tested in Firefox.
 
-Video: *working...*
+Video: https://youtu.be/j0DES22nu9w
+
+<img src="images/01_side-by-side.png" width="600" />
 
 <p>&nbsp;</p>
 
