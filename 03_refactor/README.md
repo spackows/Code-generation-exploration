@@ -40,4 +40,5 @@ Video: ...
 
 ### The refactoring sometimes made things worse instead of better
 
+### I wish I could more easily navigate back to earlier states
 
