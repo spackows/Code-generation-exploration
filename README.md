@@ -19,12 +19,12 @@ Using little projects to explore issues:
 <tr><!-- 01_simple-HTML -->
 <td valign="top">
 <p><a href="01_simple-HTML/README.md">01_simple-HTML</a></p>
-<img src="01_simple-HTML/images/01_simple-HTML.gif" width="200" alt="Example">
+<img src="01_simple-HTML/images/01_simple-HTML.gif" width="250" alt="Example">
 </td>
 <td valign="top">
 <p><b>GitHub Copilot</b></p>
 <ul>
-<li>In Visual Studio Code</li>
+<li>In&nbsp;Visual&nbsp;Studio&nbsp;Code</li>
 <li>Chat "Ask" mode</li>
 <li>Default model, GPT-4.1</li>
 <li>See: <a href="https://code.visualstudio.com/docs/copilot/getting-started">Getting started with Copilot in VS Code</a></li>
@@ -44,7 +44,7 @@ Users can drag the menu wider or narrower.</p>
 <tr><!-- 02_simple-HTML-with-coding-style -->
 <td valign="top">
 <p><a href="02_simple-HTML-with-coding-style/README.md">02_simple-HTML-with-coding-style</a></p>
-<img src="02_simple-HTML-with-coding-style/images/02_simple-HTML-with-coding-style.png" width="200" alt="Example">
+<img src="02_simple-HTML-with-coding-style/images/02_simple-HTML-with-coding-style.png" width="250" alt="Example">
 </td>
 <td valign="top">
 <p>Same as above</p>
@@ -53,6 +53,24 @@ Users can drag the menu wider or narrower.</p>
 <p>Same, simple web page as <code>01_simple-HTML</code>.  Same three prompts.</p>
 <p>But this time, coding style is specified in an <code>instructions.md</code> file. See: <a href="https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features#_customize-ai-code-generation">Customize AI code generation</a></p>
 <p>The HTML page content and user experience need to be correct, as before. <b>AND</b> the coding style of the CSS, HTML, and Javascript must conform to the instructions.</p>
+</td>
+</tr>
+<tr><!-- 03_refactor -->
+<td valign="top">
+<p><a href="03_refactor/README.md">03_refactor</a></p>
+<img src="03_refactor/images/03_refactor.png" width="250" alt="Example">
+</td>
+<td valign="top">
+<p>Same as above, but using chat "edit" mode</p>
+</td>
+<td valign="top">
+<p>Refactoring the HTML file generated in <code>02</code>:</p>
+<ul>
+<li>Remove the unwanted text</li>
+<li>Remove the unwanted scroll bar</li>
+<li>Remove the unwanted min and max width restriction</li>
+<li>Fix the drag delay (or try to)</li>
+</ul>
 </td>
 </tr>
 </table>
