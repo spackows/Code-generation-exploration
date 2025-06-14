@@ -21,7 +21,7 @@ My chat inputs:
 
 Generated HTML file: [index_copilot.html](index_copilot.html)
 
-Time: < 1 hour
+Time: > 1 hour (after that I gave up on the AI!)
 
 <p>&nbsp;</p>
 
