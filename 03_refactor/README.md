@@ -29,7 +29,7 @@ Time: > 1 hour (after that I gave up on the AI!)
 ## Testing
 The HTML file was tested in Firefox.
 
-Video: ...
+Video: https://youtu.be/676irOQUhSo
 
 <img src="images/03_refactor.png" width="600" />
 
