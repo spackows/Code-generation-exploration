@@ -40,5 +40,20 @@ Video: https://youtu.be/676irOQUhSo
 
 ### The refactoring sometimes made things worse instead of better
 
+Here's what the AI generated for sample 02:<br/>
+<img src="images/refactor-mousemove_00.png" width="700px" alt="AI-generated function"/>
+
+Here are three examples of the AI trying to simpilfy the `mousemove` event handling:
+
+<img src="images/refactor-mousemove_01.png" width="700px" alt="AI-refactored function"/>
+
+<img src="images/refactor-mousemove_02.png" width="700px" alt="AI-refactored function"/>
+
+<img src="images/refactor-mousemove_03.png" width="700px" alt="AI-refactored function"/></td>
+
+For comparison, here's the human-written version:</br>
+<img src="images/refactor-mousemove_human.png" width="700px" alt="Function written by human"/>
+
+
 ### I wish I could more easily navigate back to earlier states
 
