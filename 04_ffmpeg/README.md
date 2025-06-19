@@ -46,5 +46,13 @@ Use the [ffmpeg library](https://www.ffmpeg.org/ffmpeg.html) to process video in
 <p>&nbsp;</p>
 
 
+## Analysis, remarks
+
+### UX-breaking extension update
+The way files are included as context was changed in a recent update to the GitHub Copilot VS Code extension:<br/>
+https://youtu.be/JQRytAkPh7g
+
+In a nutshell: VC Code creates a new file every time you submit a prompt, unless you click the name of the file you alread have open in the editor.
+
 
 
