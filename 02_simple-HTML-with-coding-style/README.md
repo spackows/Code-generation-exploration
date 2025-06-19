@@ -56,6 +56,12 @@ Video: https://youtu.be/_236XnktxOU
 ### Coding style applied correctly
 The coding style specified in the `instructions.md` file were followed correctly.  Nice.
 
+### Naming the coding style instructions file UX problem
+The way VS Code handles naming the instructions file is awkward:<br/>
+https://youtu.be/ey8TUmNx8VE
+
+In a nutshell: VS Code appends "instructions.md" to the end of the name you specify.  So I have files named `instructions.md.instructions.md`, for example.
+
 ### Feature gaps of Copilot in VS Code
 - **Parameters obscured** - As far as I can tell, there's no way to specify the decoding method, random seed, temperature, etc.  This makes it impossible to systematically test different prompts and instruction files, and it makes it impossible to reproduce results.  For a production solution, where liability, privacy, and security matter, I can't imagine anyone accepting these shortcomings.
 - **Poor logging support** - With generative AI projects, it's important to be able to show your work.  That means collecting logs.  But in VS Code, you have to jump through a few hoops to grab the logs. (See: [Chat history](https://code.visualstudio.com/docs/copilot/chat/copilot-chat#_chat-history)) Also, there are some gaps in what's collected.  For example, nowhere in the logs can I see which model is being used (eg. GPT-4.1 or whatever.)  Complete prompting logs should be automatically saved to your project directory (or to a location you specify.)
