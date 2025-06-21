@@ -96,15 +96,100 @@ Create a node.js script that extracts audio from an .mp4 file
 
 The generated file was surprisingly similar to what was generated from the previous, fussy prompting.  I used the same `@ffmpeg-installer/ffmpeg` as before to handle the path, and then tried running the generated file.
 
+When I ran the generated file, there was a problem: 
+
+Here's the file that was generated:</br>
+[extract-audio_copilot_less-instructions.js](extract-audio_copilot_less-instructions.js)
+
 <p>&nbsp;</p>
 
 
 ## Identify silences
+Before trimming pauses or silences out of a video, you first need to identify them.
+
+Here's the human-created solution:<br/>
+[detect-silence_human.js](detect-silence_human.js)
+
+Here's a video stepping through generating code to do the same thing:<br/>
+_working..._
+
+Based on the experience with the extract-audio sample, when I prompted the AI to generate a solution, I gave this high-level prompt:
+```
+Create a node.js program to detect the periods of silence in a given .mp4 video file.
+Print the silences out in an array of JSON structures like this:
+[ { \"silence_start\" : <start-time>, \"silence_end\" : <end-time> }, ... ]
+```
+
+Then I used the same prompt as before to get the `ffmpeg` path.
+
+When I ran the generated script, there was a problem: No silences were detected!  (For a decription of what was wrong, watch the video above or see [Root cause of the problem](#root-cause-of-the-problem) below.)
+
+So I use this prompt to get the AI to fix the problem:<br/>
+```
+This implementation didn't find all the silences
+```
+
+The regenerated code did successfully find the silences.  (But the solution sure wasn't intuitive.)
+
+Here's the file that was generated:</br>
+[detect-silence_copilot.js](detect-silence_copilot.js)
+
+### Root cause of the problem
+The reason no silences were captured is because the `parseFfmpegOutput` routine was expecting to receive the entire output from the `ffmpeg` call at once:
+```
+function parseFfmpegOutput( data )
+{
+    var lines = data.toString().split( "\n" );
+    var silence_start = null;
+
+    for( var i = 0; i < lines.length; i++ )
+    {
+```
+But the `detectSilence` routine was calling `parseFfmpegOutput` every time a bit of data was returned from the `ffmpeg` call:
+```
+var ffmpeg = spawn( ffmpegPath, ffmpeg_args );
+
+    ffmpeg.stderr.on( "data", function( data )
+    {
+        console.log( "data\n" + data ); // <-- I added this to debug the problem
+        parseFfmpegOutput( data );
+
+    } );
+```
+When I added that debugging line, this is what I saw:
+```
+.
+.
+.
+data
+[silencedetect @ 0000024232e6d400] silence_start: 20.0005
+
+data
+[silencedetect @ 0000024232e6d400] silence_end: 20.7635 | silence_duration: 0.763016
+
+data
+[silencedetect @ 0000024232e6d400] silence_start: 21.5215
+[silencedetect @ 0000024232e6d400] silence_end: 22.1046 | silence_duration: 0.583107
+
+data
+[silencedetect @ 0000024232e6d400] silence_start: 23.9035
+.
+.
+.
+```
 
 <p>&nbsp;</p>
 
 
 ## Trim silences
+
+### Error handling
+When you specify an output file that already exists, the default `ffmpeg` behavior is to print the following message and wait for user input:
+```
+File 'sample-video.mp3' already exists. Overwrite ? [y/N]
+```
+
+My human-written script just fails in this case.  That's not great, but the AI-generated solution is worse: it just hangs!
 
 <p>&nbsp;</p>
 
