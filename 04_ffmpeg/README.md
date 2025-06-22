@@ -180,9 +180,6 @@ data
 
 <p>&nbsp;</p>
 
-
-## Trim silences
-
 ### Error handling
 When you specify an output file that already exists, the default `ffmpeg` behavior is to print the following message and wait for user input:
 ```
@@ -190,6 +187,26 @@ File 'sample-video.mp3' already exists. Overwrite ? [y/N]
 ```
 
 My human-written script just fails in this case.  That's not great, but the AI-generated solution is worse: it just hangs!
+
+<p>&nbsp;</p>
+
+
+## Trim silences
+The big finale.
+
+Here's the human-created solution:<br/>
+[trim-silence_human.js](trim-silence_human.js)
+
+Here's a video stepping through generating code to do the same thing:<br/>
+_working..._
+
+Initial prompt:
+```
+Create a node.js script that trims silent parts from an .mp4 file
+```
+
+Then I used the same prompt as before to get the `ffmpeg` path.
+
 
 <p>&nbsp;</p>
 
