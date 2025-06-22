@@ -111,7 +111,7 @@ Here's the human-created solution:<br/>
 [detect-silence_human.js](detect-silence_human.js)
 
 Here's a video stepping through generating code to do the same thing:<br/>
-_working..._
+https://youtu.be/Yl6YRygJanM
 
 Based on the experience with the extract-audio sample, when I prompted the AI to generate a solution, I gave this high-level prompt:
 ```
