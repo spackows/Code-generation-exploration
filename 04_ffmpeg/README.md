@@ -224,6 +224,8 @@ There are other fishy things about how files are included as context too:
 - For example, sometimes it looks like the same instruction file is being pulled in multiple times.
 - Also, I started to wonder if VS Code was reading the contents of the directory in which my current file is located and then including the contents of those other files in the directory as context too.  The thing that made me wonder this is that I was seeing spooky similarities between generated code and what's in other files in the working directory (I have no proof of this.)  This cunfusion and lack-of-trust is a result of the lack of transparency and obfuscation around what VS Code does, what Copilot does, and what OpenAI does between the prompt text you write and the LLM that is generating output.
 
+### Human factors: I'm not checking the code like I should be
+For some of the messier implementations, as I was prompting the AI to fix bugs, I stopped even trying to understand what the generated was doing.  I found myself not even reading the code.  I just ran the solution and then prompted the AI with "Running this script returned this error: <error-message>".  That's not the way to work on customer-facing, production code!  But when I forced my eyeballs to scan the offending, messy, bizarre code, my brain was screaming in agony.  It sounds extreme even to me.  And this is just one, small file.  I cannot stress strongly enough how unlikely it is that developers will thoroughly review AI-generated code like they should.  This means "have a review process in place" is not a good way to mitigate the risk of AI-generated code having serious security, privacy, accessibility, and performance problems.
 
-
+<p>&nbsp;</p>
 
