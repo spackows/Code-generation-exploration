@@ -197,9 +197,6 @@ The big finale.
 Here's the human-created solution:<br/>
 [trim-silence_human.js](trim-silence_human.js)
 
-Here's a video stepping through generating code to do the same thing:<br/>
-_working..._
-
 This case turned out to be too hard for a one-line prompt.
 Initial prompt:
 ```
