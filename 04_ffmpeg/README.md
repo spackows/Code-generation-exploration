@@ -234,7 +234,7 @@ The ~one-line prompt didn't result in a successful solution.  So I generated 7 t
 </tr>
 <tr>
 <td valign="top">
-<p></p>02</p>
+<p>02</p>
 <p>[ SUCCESS ]</p>
 <ul>
 <li><a href="trim-silence/trim-silence_copilot_02_01.js">First&nbsp;try</a></li>
@@ -256,7 +256,7 @@ But because of the install problems mentioned above, and because there is a simp
 </tr>
 <tr>
 <td valign="top">
-<p></p>03</p>
+<p>03</p>
 <p>[ FAIL ]</p>
 <ul>
 <li><a href="trim-silence/trim-silence_copilot_03_01.js">First&nbsp;try</a></li>
@@ -282,7 +282,7 @@ So I submitted the following prompt:<br/>
 </tr>
 <tr>
 <td valign="top">
-<p></p>04</p>
+<p>04</p>
 <p>[ FAIL ]</p>
 <ul>
 <li><a href="trim-silence/trim-silence_copilot_04_01.js">First&nbsp;try</a></li>
@@ -308,7 +308,7 @@ So I submitted the following prompt:<br/>
 </tr>
 <tr>
 <td valign="top">
-<p></p>05</p>
+<p>05</p>
 <p>[ FAIL ]</p>
 <ul>
 <li><a href="trim-silence/trim-silence_copilot_05_01.js">First&nbsp;try</a></li>
@@ -332,7 +332,7 @@ So I submitted the following prompt:<br/>
 </tr>
 <tr>
 <td valign="top">
-<p></p>06</p>
+<p>06</p>
 <p>[ FAIL ]</p>
 <ul>
 <li><a href="trim-silence/trim-silence_copilot_06_01.js">First&nbsp;try</a></li>
@@ -358,7 +358,7 @@ So I submitted the following prompt:<br/>
 </tr>
 <tr>
 <td valign="top">
-<p></p>07</p>
+<p>07</p>
 <p>[ SUCCESS ]</p>
 <ul>
 <li><a href="trim-silence/trim-silence_copilot_07_01.js">First&nbsp;try</a></li>
