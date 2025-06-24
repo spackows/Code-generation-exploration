@@ -200,12 +200,113 @@ Here's the human-created solution:<br/>
 Here's a video stepping through generating code to do the same thing:<br/>
 _working..._
 
+This case turned out to be too hard for a one-line prompt.
 Initial prompt:
 ```
 Create a node.js script that trims silent parts from an .mp4 file
 ```
+(Then I used the same prompt as before to get the `ffmpeg` path.)
 
-Then I used the same prompt as before to get the `ffmpeg` path.
+The ~one-line prompt didn't result in a successful solution.  So I generated 7 tries with the same simple prompt to see what would happen.  The 7 solutions were surprisingly different from one another.  And they all had different problems to troubleshoot.  The table below summarizes my effort to get them all working.
+
+<table>
+<tr>
+<td>Trial</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td valign="top">
+<p>01</p>
+<p>[ SUCCESS ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_01_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_01_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>The first line tries to import the library <code>fluent-ffmpeg</code> is depracated, so I submitted the following prompt:<br/>
+<code>The package called "fluent-ffmpeg" is deprecated., so don't use that library.</code></li>
+</ul>
+<p>After that, the generated solution worked.</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p></p>02</p>
+<p>[ SUCCESS ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_02_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_02_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>The generated solution used <code>ffprobe</code> to determine the total length of the original video (for some reason.)  
+But because of the install problems mentioned above, and because there is a simple solution without using it, I submitted the following prompt:<br/>
+<code>Rework this solution so it doesn't use ffprobe.</code></li>
+<li>Then, when I ran the generated script, it threw errors, so I submitted the following prompt:<br/>
+<code>This implentation has a bug in it. When I run this script, I get the following error: "[concat @ 000001dea4de99c0] DTS 167700 < 170036 out of order
+[mp4 @ 000001dea4df4ec0] Non-monotonous DTS in output stream 0:0; previous: 170036, current: 167700; changing to 170037. This may result in incorrect timestamps in the output file."</code></li>
+</ul>
+<p>After that, the generated solution worked.</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p></p>03</p>
+<p>[ FAIL ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_03_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_03_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>The generated solution used <code>ffprobe</code> to determine the total length of the original video, like solution 01.  
+I used the same prompt to rework the solution to not use <code>ffprobe</code>.</li>
+<li>In a few places, there was simply this placeholder:<br/>
+<code>// ...existing code...</code><br/>
+So I submitted the following prompt:<br/>
+<code>You have to put code where it says "...existing code..."</code></li>
+<li>Running the script returned an error, so I submitted this prompt:<br/>
+<code>Running this script gets the following error: "Error: Command failed: "ffmpeg.exe" -i "video-with-silences.mp4" 2>&1"</code></li>
+<li>Now, the script was running into the "Non-monotonous DTS in output stream" error that 02 hit.  I submitted the same prompt again for 03.</li>
+<li>That didn't fix the prolem, so I submitted this prompt: <code>The previous change did not fi the problem</code></li>
+</ul>
+<p>These troubleshooting efforts still didn't make the solution work, so I gave up.</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p></p>04</p>
+<p>[ FAIL ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_04_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_04_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>The generated solution used <code>ffprobe</code> to determine the total length of the original video, like solution 01.  
+I used the same prompt to rework the solution to not use <code>ffprobe</code>.</li>
+<li>In a few places, there was simply this placeholder:<br/>
+<code>// ...existing code...</code><br/>
+So I submitted the following prompt:<br/>
+<code>You have to put code where it says "...existing code..."</code></li>
+<li>Running the script returned an error, so I submitted this prompt:<br/>
+<code>Running this script gets the following error: "Error: Command failed: "ffmpeg.exe" -i "video-with-silences.mp4" 2>&1"</code></li>
+<li>Now, the script was running into the "Non-monotonous DTS in output stream" error that 02 hit.  I submitted the same prompt again for 03.</li>
+<li>That didn't fix the prolem, so I submitted this prompt: <code>The previous change did not fix the problem</code></li>
+</ul>
+<p>These troubleshooting efforts still didn't make the solution work, so I gave up.</p>
+</td>
+</tr>
+</table>
 
 
 <p>&nbsp;</p>
