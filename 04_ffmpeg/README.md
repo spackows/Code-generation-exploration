@@ -306,6 +306,74 @@ So I submitted the following prompt:<br/>
 <p>These troubleshooting efforts still didn't make the solution work, so I gave up.</p>
 </td>
 </tr>
+<tr>
+<td valign="top">
+<p></p>05</p>
+<p>[ FAIL ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_05_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_05_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>Running the generated script returned and error, so I submitted this prompt:<br/>
+<code>Running this script returns the following error: "Error: Command failed: ffmpeg -i "video-with-silences.mp4" -af silencedetect=noise=-30dB:d=0.5 -f null - 2>&1"</code></li>
+<li>The updates made that error go away, but the script didn't work.  So I submitted this prompt:<br/>
+<code>This script has a bug. When I run this script, it doesn't detect any silences.</code></li>
+<li>The next change added the use of `ffprobe`, so I sumitted this prompt:<br/>
+<code>Change this solution do it doesn't use ffprobe</code></li>
+<li>The updated script didn't detect any silences, so I prompted:<br/>
+<code>When I run this script, it doesn't detect any silences</code></li>
+</ul>
+<p>After these troubleshooting steps, the script still didn't trim any silences, so I gave up.</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p></p>06</p>
+<p>[ FAIL ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_06_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_06_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>The script tried to require the deprecated package <code>fluent-ffmpeg</code>, so I submitted this prompt:<br/>
+<code>The package called "fluent-ffmpeg" is deprecated. Change the solution so it doesn't use fluent-ffmpeg.</code></li>
+<li>The updated script tried to use <code>ffprobe</code>, so I submitted this prompt:<br/>
+<code>Change the solution so it doesn't use ffprobe</code></li>
+<li>The updated script then tried to call <code>ffmpeg</code> improperly, so I sumitted this prompt:<br/>
+<code>Use @ffmpeg-installer/ffmpeg to get the path for ffmeg at run time</code></li>
+<li>The updated script returned an error, so I prompted:<br/>
+<code>When I run this script, I get the following error: "Error: Command failed: "ffmpeg.exe" -i "video-with-silences.mp4" 2>&1"</code></li>
+<li>The updated script didn't remove any silences, so I prompted:<br/>
+<code>This script doesn't remove any of the silences. The output file still has all the silences, but it's supposed to have the silences removed.</code></li>
+</ul>
+<p>After these troubleshooting steps, the script still didn't trim any silences, so I gave up.</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p></p>07</p>
+<p>[ SUCCESS ]</p>
+<ul>
+<li><a href="trim-silence/trim-silence_copilot_07_01.js">First&nbsp;try</a></li>
+<li><a href="trim-silence/trim-silence_copilot_07_final.js">Final&nbsp;try</a></li>
+</ul>
+</td>
+<td valign="top">
+<p>Troubleshooting:</p>
+<ul>
+<li>The script tried to use <code>ffprobe</code>, so I submitted this prompt:<br/>
+<code>Change the solution so it doesn't use ffprobe</code></li>
+</ul>
+<p>After this one extra prompt, the script worked.</p>
+</td>
+</tr>
 </table>
 
 
@@ -327,6 +395,9 @@ There are other fishy things about how files are included as context too:
 
 ### Human factors: I'm not checking the code like I should be
 For some of the messier implementations, as I was prompting the AI to fix bugs, I stopped even trying to understand what the generated was doing.  I found myself not even reading the code.  I just ran the solution and then prompted the AI with "Running this script returned this error: <error-message>".  That's not the way to work on customer-facing, production code!  But when I forced my eyeballs to scan the offending, messy, bizarre code, my brain was screaming in agony.  It sounds extreme even to me.  And this is just one, small file.  I cannot stress strongly enough how unlikely it is that developers will thoroughly review AI-generated code like they should.  This means "have a review process in place" is not a good way to mitigate the risk of AI-generated code having serious security, privacy, accessibility, and performance problems.
+
+### Human-factors: Slot machine
+When generating a script didn't work, and as I got frustrated debugging increasingly bizarre and messy generated refactored code, it was so much easier to just throw the current attempt in the garbage and start from scratch.  I thought: "Maybe this time, it will generate a successful solution!"  Mayb this time.  Maybe this time.  Maybe this time.  And the intermittent success rate was the perfect reward to keep me pulling that metaphrical slot-machine arm.  I got bogged down and spent way too long on an imperfect approach (the attempt at generating a solution from one, high-level prompt) because it was so easy to just regenerate, and because _maybe this time will be the charm._
 
 <p>&nbsp;</p>
 
