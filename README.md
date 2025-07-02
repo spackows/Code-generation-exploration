@@ -73,6 +73,39 @@ Users can drag the menu wider or narrower.</p>
 </ul>
 </td>
 </tr>
+<tr><!-- 04_ffmpeg -->
+<td valign="top">
+<p><a href="04_ffmpeg/README.md">04_ffmpeg</a></p>
+<img src="04_ffmpeg/images/audio-track-comparison_human.png" width="250" alt="Example">
+</td>
+<td valign="top">
+<p>Same as above</p>
+</td>
+<td valign="top">
+<p>Generating scripts that use the <a href="https://www.ffmpeg.org/ffmpeg.html"><code>ffmpeg</code> library</a>:</p>
+<ul>
+<li>Extract audio from an .mp4 file</li>
+<li>Identify silences in a video</li>
+<li>Trim silences from a video</li>
+</ul>
+</td>
+</tr>
+<tr><!-- 05_MURAL-API -->
+<td valign="top">
+<p><a href="05_MURAL-API/README.md">05_MURAL-API</a></p>
+<img src="05_MURAL-API/images/mural.png" width="250" alt="Example">
+</td>
+<td valign="top">
+<p>Same as above, with the <a href="https://code.visualstudio.com/docs/copilot/chat/copilot-chat-context#_reference-web-content">#fetch feature</a></p>
+</td>
+<td valign="top">
+<p>Generating scripts that use the <a href="https://developers.mural.co/public/reference/intro">MURAL API</a>:</p>
+<ul>
+<li>Read widgets from a mural</li>
+<li>Add a sticky note to a mural</li>
+</ul>
+</td>
+</tr>
 </table>
 
 <p>&nbsp;</p>
