@@ -4,6 +4,8 @@ Objective: Create a node.js script that uses the [MURAL REST API](https://develo
 \*This experiment requires using the \#fetch feature in VS Code to include the MURAL API reference documentation in prompts.  
 See: [Reference web content](https://code.visualstudio.com/docs/copilot/chat/copilot-chat-context#_reference-web-content)
 
+<img src="images/mural.png" width="400" alt="Mural with two sticky notes"/>
+
 <p>&nbsp;</p>
 
 
