@@ -34,7 +34,7 @@ function addSticky( x, y, txt )
             if ( response.data && Array.isArray( response.data.value ) && response.data.value.length > 0 )
             {
                 //console.log( response.data.value[0].id );
-				console.log( response.data.value.id );
+				console.log( response.data.value.id ); // Human correction
             }
 
         } )
