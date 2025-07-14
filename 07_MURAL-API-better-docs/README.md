@@ -53,29 +53,30 @@ Here's a video stepping through the experiment: _working..._
 #### Reading widgets (referencing MURAL API docs)
 ```
 Use the node.js library axios to call the MURAL REST API to read all the widgets in a mural and then print the returned array of widgets. 
-Refer to the API reference for the expected structure of the response data:
+Refer to the API reference: 
 #fetch https://developers.mural.co/public/reference/getmuralwidgets
 ```
 
 #### Reading widgets (referencing local doc app)
 ```
 Use the node.js library axios to call the MURAL REST API to read all the widgets in a mural and then print the returned array of widgets. 
-Refer to the API reference for the expected structure of the response data:
+Refer to the API reference: 
 #fetch http://localhost:8080?topic_id=read-widgets
 ```
 
 #### Create a widget (referencing MURAL API docs)
 ```
-Use the node.js library axios to call the MURAL REST API to create a sticky note with the text "hello, widget!".
-After the widget is successfully added to the mural, print the ID of the sticky note.
-Refer to the API reference:
+Use the node.js library axios to call the MURAL REST API to create a sticky note with the text "hello, widget!". 
+After the widget is successfully added to the mural, print the ID of the sticky note. 
+Refer to the API reference: 
 #fetch https://developers.mural.co/public/reference/createstickynote
 ```
 
 #### Create a widget (referencing local doc app)
 ```
-Use the node.js library axios to call the MURAL REST API to read all the widgets in a mural and then print the returned array of widgets. 
-Refer to the API reference for the expected structure of the response data:
+Use the node.js library axios to call the MURAL REST API to create a sticky note with the text "hello, widget!". 
+After the widget is successfully added to the mural, print the ID of the sticky note. 
+Refer to the API reference for the expected structure of the response data: 
 #fetch http://localhost:8080/?topic_id=create-sticky-note
 ```
 
