@@ -41,13 +41,43 @@ _No wonder fetching that file didn't help Copilot generate the correct code!_
 <p>&nbsp;</p>
 
 
-## Solution: API reference optimized for scraping by LLMs
-In [experiment 06](https://github.com/spackows/Code-generation-exploration/blob/main/06_nodejs-app/README.md), a simple doc app was created to host rewritten API refernce information for two MURAL API endpoints: widgets and sticky-note.
+## Solution: Optimize API reference for scraping by LLMs
+In [experiment 06](https://github.com/spackows/Code-generation-exploration/blob/main/06_nodejs-app/README.md), a simple doc app was created to host rewritten API refernce information for two MURAL API endpoints: `widgets` and `sticky-note`.
 
-When Copilot is instructed to fetch the API reference from that doc app, Copilot was able to generate the correct code.
+When Copilot is instructed to fetch the API reference from the experiment 06 doc app, Copilot was able to generate the correct code.
 
-Here's a video stepping through the experiment: []()
+Here's a video stepping through the experiment: _working..._
+
+### Prompts
+
+#### Reading widgets (referencing MURAL API docs)
+```
+Use the node.js library axios to call the MURAL REST API to read all the widgets in a mural and then print the returned array of widgets. 
+Refer to the API reference for the expected structure of the response data:
+#fetch https://developers.mural.co/public/reference/getmuralwidgets
+```
+
+#### Reading widgets (referencing local doc app)
+```
+Use the node.js library axios to call the MURAL REST API to read all the widgets in a mural and then print the returned array of widgets. 
+Refer to the API reference for the expected structure of the response data:
+#fetch http://localhost:8080?topic_id=read-widgets
+```
+
+#### Create a widget (referencing MURAL API docs)
+```
+Use the node.js library axios to call the MURAL REST API to create a sticky note with the text "hello, widget!".
+After the widget is successfully added to the mural, print the ID of the sticky note.
+Refer to the API reference:
+#fetch https://developers.mural.co/public/reference/createstickynote
+```
+
+#### Create a widget (referencing local doc app)
+```
+Use the node.js library axios to call the MURAL REST API to read all the widgets in a mural and then print the returned array of widgets. 
+Refer to the API reference for the expected structure of the response data:
+#fetch http://localhost:8080/?topic_id=create-sticky-note
+```
 
 <p>&nbsp;</p>
 
-<p>&nbsp;</p>
