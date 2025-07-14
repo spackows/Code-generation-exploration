@@ -1,0 +1,125 @@
+Jump to Content
+[![Mural API](https://files.readme.io/5a88483-6310bb11874afdba54b2cbf7_mural-logo-color.svg)](https://developers.mural.co/)
+[ __Guides](/public/docs)[ __API Reference](/public/reference)[ __Changelog](/public/changelog)
+* * *
+[Community](https://community.mural.co/)[My apps](https://app.mural.co/me/apps)[![Mural API](https://files.readme.io/5a88483-6310bb11874afdba54b2cbf7_mural-logo-color.svg)](https://developers.mural.co/)
+ __API Reference
+[Community](https://community.mural.co/)[My apps](https://app.mural.co/me/apps)
+[ __Guides](/public/docs)[ __API Reference](/public/reference)[ __Changelog](/public/changelog)
+Get widgets for a mural
+Search
+``
+JUMP TO
+
+## MURAL API
+  * [Introduction](/public/reference/intro)
+
+## MURAL Public API
+  * [Murals __](/public/reference/murals)
+    * [Create a mural post](/public/reference/createmural)
+    * [Get single muralget](/public/reference/getmuralbyid)
+    * [Delete single muraldelete](/public/reference/deletemuralbyid)
+    * [Update a muralpatch](/public/reference/updatemuralbyid)
+    * [Get mural's access informationpost](/public/reference/muralaccessinfo)
+    * [Duplicate a muralpost](/public/reference/duplicatemural)
+    * [Export mural to filepost](/public/reference/exportmural)
+    * [Get export URLget](/public/reference/exporturlmural)
+    * [Get murals for a workspaceget](/public/reference/getworkspacemurals)
+    * [Get recently opened murals for a workspaceget](/public/reference/getworkspacerecentmurals)
+    * [Get murals for a roomget](/public/reference/getroommurals)
+    * [Update mural visitor settingspatch](/public/reference/updatemuralvisitorsettings)
+    * [Reset the mural visitor linkpost](/public/reference/resetvisitorlink)
+  * [Mural Contents __](/public/reference/mural-contents)
+    * [Create an asset URL post](/public/reference/createasset)
+    * [Get chat for a muralget](/public/reference/getmuralchat)
+    * [Get tags in a muralget](/public/reference/getmuraltags)
+    * [Start a private mode session for a mural.post](/public/reference/startprivatemode)
+    * [Create a tag in a muralpost](/public/reference/createmuraltag)
+    * [Get a private mode session for a mural.get](/public/reference/getprivatemode)
+    * [Get a single tagget](/public/reference/gettagbyid)
+    * [Stops a private mode session for a mural.post](/public/reference/stopprivatemode)
+    * [Update a tag on a muralpatch](/public/reference/updatetagbyid)
+    * [Delete a tag from a muraldelete](/public/reference/deletetagbyid)
+    * [Get voting sessions in a muralget](/public/reference/getmuralvotingsessions)
+    * [Get the timer for a mural.get](/public/reference/getmuraltimer)
+    * [Get a voting session in a muralget](/public/reference/getmuralvotingsessionbyid)
+    * [Start the timer for a mural.post](/public/reference/startmuraltimer)
+    * [Get voting session results in a muralget](/public/reference/getmuralvotingsessionresults)
+    * [Stop the timer for a mural.post](/public/reference/stopmuraltimer)
+    * [Get widgets for a muralget](/public/reference/getmuralwidgets)
+    * [Pauses/resumes the mural timer.patch](/public/reference/updatemuraltimer)
+    * [Get files for a muralget](/public/reference/getmuralfilewidgets)
+    * [Get single widgetget](/public/reference/getmuralwidget)
+    * [Delete a widgetdelete](/public/reference/deletewidgetbyid)
+    * [Create an area on a muralpost](/public/reference/createarea)
+    * [Update an area on a muralpatch](/public/reference/updatearea)
+    * [Create an arrow on a muralpost](/public/reference/createarrow)
+    * [Delete a voting session in a muraldelete](/public/reference/deletemuralvotingsessionbyid)
+    * [Update an arrow on a muralpatch](/public/reference/updatearrow)
+    * [Vote for a widget in the active voting session of a mural.post](/public/reference/votewidgetmuralvotingsession)
+    * [Create a file on a muralpost](/public/reference/createfile)
+    * [Update a file on a muralpatch](/public/reference/updatefile)
+    * [Start a voting session for a mural.post](/public/reference/startmuralvotingsession)
+    * [Create an image in a muralpost](/public/reference/createimage)
+    * [End a voting session for a mural.post](/public/reference/endmuralvotingsession)
+    * [Update an image in a muralpatch](/public/reference/updateimage)
+    * [Create shapes on a muralpost](/public/reference/createshapewidget)
+    * [Update a shape widget on a muralpatch](/public/reference/updateshapewidget)
+    * [Create sticky notes on a muralpost](/public/reference/createstickynote)
+    * [Update a sticky note on a muralpatch](/public/reference/updatestickynote)
+    * [Create a table on a muralpost](/public/reference/createtable)
+    * [Create titles on a muralpost](/public/reference/createtitle)
+    * [Update a title on a muralpatch](/public/reference/updatetitle)
+    * [Create text boxes on a muralpost](/public/reference/createtextbox)
+    * [Update a textbox on a muralpatch](/public/reference/updatetextbox)
+    * [Create a comment on a muralpost](/public/reference/createcomment)
+    * [Update a comment on a muralpatch](/public/reference/updatecomment)
+  * [Users __](/public/reference/users)
+    * [Get users of a mural get](/public/reference/getmuralusers)
+    * [Update mural member permissionspatch](/public/reference/updatemuralmemberpermissions)
+    * [Invite users to a muralpost](/public/reference/inviteuserstomural)
+    * [Remove users from a muralpost](/public/reference/removemuralusers)
+    * [Get users for a roomget](/public/reference/getroommembers)
+    * [Update room's members' permissions.patch](/public/reference/updateroommemberpermissions)
+    * [Invite users to a roompost](/public/reference/inviteuserstoroom)
+    * [Remove users from a roompost](/public/reference/removeroomusers)
+    * [Get current userget](/public/reference/getcurrentmember)
+    * [Invite users to a workspacepost](/public/reference/inviteuserstoworkspace)
+  * [Rooms __](/public/reference/rooms)
+    * [Create a room post](/public/reference/createroom)
+    * [Get single roomget](/public/reference/getroominfobyid)
+    * [Delete single roomdelete](/public/reference/deleteroombyid)
+    * [Update single roompatch](/public/reference/updateroombyid)
+    * [Create a folder in a roompost](/public/reference/createroomfolder)
+    * [Get folders for a roomget](/public/reference/getroomfolders)
+    * [Delete a folder from a roomdelete](/public/reference/deletefolderbyid)
+    * [Get rooms for a workspaceget](/public/reference/getworkspacerooms)
+    * [Get open rooms for a workspaceget](/public/reference/getworkspaceopenrooms)
+  * [Templates __](/public/reference/templates)
+    * [Get default templates get](/public/reference/getdefaulttemplates)
+    * [Create a custom template from a muralpost](/public/reference/createcustomtemplate)
+    * [Delete single templatedelete](/public/reference/deletetemplatebyid)
+    * [Create a mural from a templatepost](/public/reference/createmuralfromtemplate)
+    * [Get default and custom templates for a workspaceget](/public/reference/gettemplatesbyworkspace)
+    * [Get the recent templates for a workspaceget](/public/reference/getrecenttemplates)
+  * [Workspaces __](/public/reference/workspaces)
+    * [Get workspaces get](/public/reference/getworkspaces)
+    * [Get single workspaceget](/public/reference/getworkspace)
+  * [Search __](/public/reference/search)
+    * [Search murals get](/public/reference/searchmurals)
+    * [Search roomsget](/public/reference/searchrooms)
+    * [Search templatesget](/public/reference/searchtemplates)
+
+# Get widgets for a mural
+get https://app.mural.co/api/public/{version}/murals/{muralId}/widgets
+Returns all of the widgets for a mural. Does not currently include drawings.
+**Authorization scope** : `murals:read`
+Language
+ __Shell __Node __Ruby __PHP __Python
+Credentials
+OAuth2
+OAuth2
+Bearer
+URL
+Base URL
+https://app.mural.co/api/public/v1/murals/{muralId}/widgets
