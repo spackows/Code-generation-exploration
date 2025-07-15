@@ -7,7 +7,7 @@ Objective: Get better results from Copilot by optimizing the MURAL API docs for 
 ## Background
 In [experiment 05](https://github.com/spackows/Code-generation-exploration/tree/main/05_MURAL-API), Copilot struggled to implement correct calls to the MURAL API and to correctly process returned results.
 - Required parameters were missed
-- Invalid prameter values were specified
+- Invalid parameter values were specified
 - Fields of returned results were not processed correctly
 - Questions about the MURAL API weren't answered correctly either
 
@@ -42,13 +42,13 @@ _No wonder fetching that file didn't help Copilot generate the correct code!_
 
 
 ## Solution: Optimize API reference for scraping by LLMs
-In [experiment 06](https://github.com/spackows/Code-generation-exploration/blob/main/06_nodejs-app/README.md), a simple doc app was created to host rewritten API refernce information for two MURAL API endpoints: `widgets` and `sticky-note`.
+In [experiment 06](https://github.com/spackows/Code-generation-exploration/blob/main/06_nodejs-app/README.md), a simple doc app was created to host rewritten API reference information for two MURAL API endpoints: `widgets` and `sticky-note`.
 
 When Copilot is instructed to fetch the API reference from the experiment 06 doc app, Copilot was able to generate the correct code.
 
 Here's a video stepping through the experiment: https://youtu.be/iIhgR9R0q_E
 
-The following image shows a side-by-side comparison of content scraped from the MURAL API reference (on the left) vs. content scraped from a web page in the experiment 06 doc app (on the right.)  The doc app is optimized for use by LLMs in AI-integrated programming evironments (eg. Copilot) and function-calling AI agents.
+The following image shows a side-by-side comparison of content scraped from the MURAL API reference (on the left) vs. content scraped from a web page in the experiment 06 doc app (on the right.)  The doc app is optimized for use by LLMs in AI-integrated programming environments (eg. Copilot) and function-calling AI agents.
 
 <img src="images/scraped-comparison.png" width="1000" alt="Side-by-side comparison of scraped content" />
 
@@ -65,12 +65,12 @@ The following image shows a side-by-side comparison of content scraped from the 
 <tr>
 <td valign="top">Info available</td>
 <td valign="top"><p>Basic scraping doesn't return much information.</p><p>I assume the bulk of the content is fetched after the main part of the page loads (very common practice.)</p></td>
-<td valign="top"><p>Critical information is avaiable immediately, available to basic scraping.</p></td>
+<td valign="top"><p>Critical information is available immediately with basic scraping.</p></td>
 </tr>
 <tr>
 <td valign="top">Noise</td>
 <td valign="top"><p>Header, search, and navigation components - none of which are useful to Copilot in this use case - all overwhelm the small amount of reference information that's available.</p></td>
-<td valign="top"><p>Components like the header and navigation are pulled after the page loads, not overwlehming reference information in the scraped content.</p></td>
+<td valign="top"><p>Components like the header and navigation are pulled after the page loads, not overwhelming reference information in the scraped content.</p></td>
 </tr>
 <tr>
 <td valign="top">Complete</td>
@@ -90,7 +90,7 @@ The following image shows a side-by-side comparison of content scraped from the 
 <tr>
 <td valign="top">Format</td>
 <td valign="top"><p>It's difficult to say how the information is structured, because it's not available when scraped.</p></td>
-<td valign="top"><p>There are collapsed elements providing human readers with progressive disclsure, and some information is presented in a tabular-looking style.   However, that is all done with cascading style sheets.  The underlying HTML elements are very simple: headers, paragraphs, lists, and codeblock.  This means converting the scraped HTML to eays-to-navigate text (or Markdown) is simple.</p></td>
+<td valign="top"><p>There are collapsed elements providing human readers with progressive disclosure, and some information is presented in a tabular-looking style.   However, that is all done with cascading style sheets.  The underlying HTML elements are very simple: headers, paragraphs, lists, and codeblock.  This means converting the scraped HTML to easy-to-navigate text (or Markdown) is simple.</p></td>
 </tr>
 </table>
 
