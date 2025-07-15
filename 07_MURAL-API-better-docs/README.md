@@ -46,7 +46,7 @@ In [experiment 06](https://github.com/spackows/Code-generation-exploration/blob/
 
 When Copilot is instructed to fetch the API reference from the experiment 06 doc app, Copilot was able to generate the correct code.
 
-Here's a video stepping through the experiment: _working..._
+Here's a video stepping through the experiment: https://youtu.be/iIhgR9R0q_E
 
 <p>&nbsp;</p>
 
