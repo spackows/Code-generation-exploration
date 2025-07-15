@@ -48,6 +48,10 @@ When Copilot is instructed to fetch the API reference from the experiment 06 doc
 
 Here's a video stepping through the experiment: https://youtu.be/iIhgR9R0q_E
 
+The following image shows a side-by-side comparison of content scraped from the MURAL API reference (on the left) vs. content scraped from a web page in the experiment 06 doc app (on the right.)  The doc app is optimized for use by LLMs in AI-integrated programming evironments (eg. Copilot) and function-calling AI agents.
+
+<img src="images/scraped-comparison.png" width="1000" alt="Side-by-side comparison of scraped content" />
+
 <p>&nbsp;</p>
 
 
