@@ -1,0 +1,91 @@
+<html>
+<head>
+<style>
+body
+{
+margin: 0px;
+padding: 0px;
+}
+pre
+{
+margin: 30px 20px 30px 20px;
+padding: 15px 8px 15px 8px;
+border: 1px solid lightgrey;
+border-radius: 5px;
+background: whitesmoke;
+text-wrap: wrap;
+}
+</style>
+</head>
+<body>
+<pre>In the #copilot directory, create a Node.js web app with the following basic details:<br/>1. The main file is called: server.js<br/>2. In server.js, use express to handle HTTP requests<br/>3. In server.js, use ejs to pass HTML to web pages<br/>4. Create a page, file named main.ejs, to be what is shown in browsers when users visit the web app root<br/>5. For CSS, create a subdirectory, called "public/css" <br/>6. For Javascript, create a subdirectory, called "public/javascript"</pre>
+<pre>In server.js, use port 8080</pre>
+<pre>In main.ejs, add a header, article, and nav</pre>
+<pre>When the page loads, use Javascript to dynamicallt populate the header with the words "Pretend MURAL API documentation"</pre>
+<pre>In main.ejs, populate the contents of article with HTML passed from server.js</pre>
+<pre>To the root endoint in server.js, add a query parameter, called topic_id</pre>
+<pre>In server.js, create a function with the following details:<br/>- Name: loadHTMLContent<br/>- Parameters: topic_id, and callback<br/>- Action: Find an .html file in the directory #src/docs with the same root name as the given topic_id, then return the HTML contents of that file</pre>
+<pre>In the function loadHTMLContent, the docs dir beginning should be "src", not "#src" (remove the hash symbol)</pre>
+<pre>In the loadHTMLContent function, the callback function should have exactly one parameter: the HTML to return.  When there is an error, print the error to the console and return an empty string.</pre>
+<pre>In the root endpoint, call loadHTMLContent and pass the returned HTML to main.ejs</pre>
+<pre>Create a global constant, called g_default_topic_id.  Set it to: "read-widgets".</pre>
+<pre>In the main endpoint, if the query parameter topic_id is empty, use the global parameter g_default_topic_id instead. </pre>
+<pre>In the main endpoint, the "if( topic_id )" logic is no longer needed.</pre>
+<pre>Create a new file, called "my_content.js".  Move loadHTMLContent into my_content.js.  Then import my_content.js in server.js and call the function that way.</pre>
+<pre>There is a bug in server.js.  Lines 42 - 55 shouldn't be there.</pre>
+<pre>In server.js, remove lines 43-55</pre>
+<pre>In server.js, create a function with the following details:<br/>- Name: loadSampleContent<br/>- Parameters: topic_id, and callback<br/>- Actions: <br/>1. Find all files in the directory src/samples with the same root name as the given topic_id<br/>2. Read the contents of those files into an array<br/>3. Return the array</pre>
+<pre>Create a file called "my_samples.js".  Move the function loadSamplesHTML into my_samples.js.</pre>
+<pre>In my_samples.js, create a function, called listSampleFiles, with the following details:<br/>- Input parameters topic_id<br/>- Action: find all files in the directory src/samples with the same root name as the given topic_id and then return that list of file names</pre>
+<pre>In the function loadSampleContent, replace the readdir logic with a call to the function listSampleFiles</pre>
+<pre>In my_samples.js, create a function, called readSampleFile with the following details:<br/>- Input parameter: file_name, a string in the format <topic_id>_<number>_<lang_id>.<ext><br/>- Actions: <br/>1. Parse the name of the file to extract the topic_id, the number, and the lang_id<br/>2. Read the contents of the file<br/>3. Return a JSON structure with the following fields: topic_id, number. lang_id, contents</pre>
+<pre>In my_samples.js, create a function, called parseContents, with the following details:<br/>- Input parameter: contents, text contet in the following format:<br/>1. At the beginning of the content, there will be 2 or more lines of comments<br/>2. The first line contains the sample title<br/>3. After the comments, there will be one or more blank lines<br/>4. After the blank lines is the sample code<br/>- Function actions: Read the file content and then return the following details in JSON format:<br/>- sample_title<br/>- code</pre>
+<pre>In the function readSampleFile, call the function parseContents and add title and code to the output JSON</pre>
+<pre>In the function loadSampleContent, in the forEach logic, call readSample file and push the returned JSON to the results array instead of the raw file data.</pre>
+<pre>In the function loadSampleContent, in the forEach logic, do not call readFile.  Instead, call readSample file and push the returned JSON to the results array.</pre>
+<pre>Simplify the function loadSampleContent by removing the variable called pending.</pre>
+<pre>In my_samples.js, create a function, called sampleHTML, with the following details:<br/>- Input parameter: samples_arr an array of JSON objects with the following fields:<br/>- sample_title<br/>- lang_id<br/>- code<br/>- Action: return the following HTML built with the input JSON:<br/>&lt;h3>[sample_title]&lt;/h3><br/>&lt;div class="sample_div"><br/>&lt;h4>[lang_id]&lt;/h4><br/>&lt;pre class="sample_pre lang_curl"><br/>[code]<br/>&lt;/pre></pre>
+<pre>In my_samples.js add a global parameter, called g_lang_lookup:<br/>{ "curl" : "CURL", "node" : "Node.js" }</pre>
+<pre>In the function sampleHTML, use g_lang_lookup to get the full language name for the sample.lang_id</pre>
+<pre>In my_samples.js add a function, called collateSamples, with the following details:<br/>- Input parameter: samples_arr - an array of JSON objects with fields including "topic_id" and "lang_id" and "number"<br/>- Action: Sort the array first by topic_id, then by number, than by lang_id.  Then return the sorted array.</pre>
+<pre>In the function loadSampleContent, sort the results array using the function collateSamples</pre>
+<pre>rename the function collateSamples to sortSamples</pre>
+<pre>In the function loadSampleContent, create sample_html by concatinating the output from calling sampleHTML for each sample in the results array</pre>
+<pre>In loadSampleContent, prepend the following to the beginning of sample_html:<br/>&lt;div id="samples_div"><br/>&lt;h2>Samples&lt/h2><br/><br/>And then also append the following to the end sample_html:<br/>&lt;/div></pre>
+<pre>In the callback in loadSampleContent, return just sample_html</pre>
+<pre>In server.js, import my_samples.js, and then in the root endpoint, call loadSampleContent to generate sample_html</pre>
+<pre>In server.js add an endpoint, called /toc, that does the following:<br/>- List the files in /src/docs<br/>- Extract the file base name from each<br/>- Return an array of those file base names</pre>
+<pre>Create a file, called my_toc.js, and move the body of the /toc endpoint into a function, called getTOC, in the new file.  Then, import my_toc.js in server.js and call getTOC in the /toc endpoint.</pre>
+<pre>In the function getTOC, make the callback have only one parameter: the base_names array.  WHen there is an error, just print the error to the console and return an empty array.</pre>
+<pre>In the /toc endpoint, update the call to getTOC so the callback has only one parameter: the base_names array.  All error handling is done in getTOC.</pre>
+<pre>In main.js, add a function, called loadTOC, that uses ajax to call the /toc endpoint and then populate the nav in main.ejs</pre>
+<pre>In main.js, add a function, called loadTOC, that uses ajax to call the /toc endpoint and then populate the nav in main.ejs</pre>
+<pre>In main.js, add a function, called loadTOC, that uses ajax to call the /toc endpoint and then populate the nav in main.ejs.  In the Javascript, use AJAX.</pre>
+<pre>In main.js, add a function, called loadTOC, that uses ajax to call the /toc endpoint and then populate the nav in main.ejs. In the Javascript, use AJAX.  Do not use XMLHttpRequest.</pre>
+<pre>In main.js, add a function, called loadTOC, that uses ajax to call the /toc endpoint and then populate the nav in main.ejs. In the Javascript, use $.ajax.</pre>
+<pre>In main.js, create a function, called populateTOC.  Move the code from the successful return in loadTOC into populateTOC, then call populateTOC after the successful return in loadTOC.</pre>
+<pre>In main.ejs, remove the placeholder &lt;li> elements</pre>
+<pre>When I try to run this code, I get the error $ is not defined for line 34 in main.js</pre>
+<pre>In the header of main.ejs pull in jquery</pre>
+<pre>The samples are not showing up.  Add debugging console.print statements in my_samples.js to troubleshoot the problem.</pre>
+<pre>listSampleFiles isn't returning any matches.  Add debug console.log statements to help troubleshoot the problem.</pre>
+<pre>The sample files in src/samples have the following naming format: &lt;topic_id>_&lt;number>_&lt;lang_id>.&lt;ext><br/>When trying to find sample files that are related to a given topic_id, the line 64 in listSamples is wrong.  Fix that logic to find sample file that have the given topic_id at the beginning of their file name.</pre>
+<pre>In the function parseContents, the sample_title is being retrieved wrong.  In the sample file, there is one or more comment characters at the start of the line that contains the sampe title.  When assigning a value to the variable sample_title, remove the comment characters and any spaces at the beginning of the line.</pre>
+<pre>In the function sampleHTML, line 174 is wrong.  The sample JSON object has no field called sample_title.</pre>
+<pre>In the function parseContents, line 143 is wrong.  The line from the sample file begins with one or more comment characters, then has one or more spaces, then has the sample title.  The comment characters could be different, depending on the language.  Change the logic on line 143 to remove any sort of comment characters at the beginning of the line in the sample file.</pre>
+<pre>How do you add a comment to a .bat file on Windows?</pre>
+<pre>Update line 143 in the function parseContents to handle Windows .bat file comment characters.</pre>
+<pre>In style.css, make the header run the width of the page and be 100px tall.  Give the header a hot pink background with white text 40px tall.</pre>
+<pre>Make the &lt;header> run the width of the page and be 100px tall. Give the header a hot pink background with white text 40px tall.</pre>
+<pre>Move the style details into the file styles.css</pre>
+<pre>In styles.css, make the body of the page have no margins, no padding, and no overflow</pre>
+<pre>make the &lt;body> of the page have no margins, no padding, and no overflow</pre>
+<pre>Make the text in the &lt;header> only half as tall</pre>
+<pre>Make the font family a sans-serif one</pre>
+<pre>Make the header less tall and the font there smaller</pre>
+<pre>Make the nav run from just under the header all the way to the bottom of the page, and take up the left 20% of the width. </pre>
+<pre>Make the &lt;article> run from just under the header all the way to the bottom of the page and to the right of the nav.</pre>
+<pre>Update the css so elements of class query_parameter and class query_parameter_desc be on the same line</pre>
+<pre>Update the css to make the query_parameters_ol list look like a table",
+</body>
+</html>
