@@ -1,0 +1,174 @@
+
+<h1 class="endpoint_title">Read widgets</h1>
+<p class="endpoint_description">Reads the widgets of a mural and returns an array of objects in JSON format.</p>
+
+<div class="limitations_div">
+<h2>Limitations</h2>
+<ul>
+<li>Does not include drawings</li>
+</ul>
+</div>
+
+<div class="required_scopes_div">
+<h2>Required authorization scopes</h2>
+<ul>
+<li><code>murals:read</code></li>
+</ul>
+</div>
+
+<div class="endpoint_specification_div">
+<h2>Endpoint <span class="request_type_pill get">GET</span></h2>
+<code class="endpoint_url">https://app.mural.co/api/public/&lt;API-version>/murals/&lt;mural-id>/widgets</code>
+<p>Where:</p>
+<ul>
+<li><code>&lt;mural-id></code> is your mural identifier</li>
+<li><code>&lt;API-version></code> is the MURAL API version to use (the only supported version is "v1")</li>
+</ul>
+</div>
+
+<div class="query_parameters_div">
+<h2>Query parameters</h2>
+<ol class="query_parameters_ol">
+<li class="query_parameters_li"><!-- 1. type -->
+<div class="query_parameter"><code>type</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">A comma-separated list of widget types to return</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Filters the returned widgets by type</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When no <code>type</code> is specified, all types of widgets are returned</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Supported values <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">
+<div class="long_list_div">
+<ul class="parm_attr_desc_ul">
+<li class="parm_attr_desc_li"><code>areas</code></li>
+<li class="parm_attr_desc_li"><code>arrows</code></li>
+<li class="parm_attr_desc_li"><code>comments</code></li>
+<li class="parm_attr_desc_li"><code>files</code></li>
+<li class="parm_attr_desc_li"><code>sticky notes</code></li>
+<li class="parm_attr_desc_li"><code>texts</code></li>
+<li class="parm_attr_desc_li"><code>icons</code></li>
+<li class="parm_attr_desc_li"><code>images</code></li>
+<li class="parm_attr_desc_li"><code>shapes</code></li>
+</ul>
+</div>
+</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 2. parentId -->
+<div class="query_parameter"><code>parentId</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">The identifier of a widget in the mural</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Returns only the widgets that are children of the specified parent widget</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When no <code>parentId</code> is specified, all widgets are returned regardless of parent-child relationships</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 3. limit -->
+<div class="query_parameter"><code>limit</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Maximum number of results to be returned</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Integer</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Limits the number of widgets returned to the specified number</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When no <code>limit</code> is specified, the default limit is 100 widgets returned</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 4. next -->
+<div class="query_parameter"><code>next</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Token to get the next page of items</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Fetches the next page of widgets (See: <a href="https://developers.mural.co/public/docs/pagination">Pagination</a>)</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When <code>next</code> is not specified, only the first page of widgets is returned</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Usage note       <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">To get all widgets, call the <code>/widgets</code> enpoint with successive <code>next</code> parameters until no <code>next</code> token is included in the result</div></li>
+</ul>
+</li>
+</ol>
+</div>
+
+<div class="responses_div">
+<h2>Response</h2>
+
+<h3>Success (HTTP 200)</h3>
+When the call is successful, the returned data contains the following fields:
+<ul>
+<li><code>value</code> - An array of objects in JSON structure</li>
+<li><code>next</code> - A token to retrieve the next page, if there is more than one page of results</li>
+</ul>
+<h4>Example data</h4>
+<pre>
+{
+  "value": [
+    {
+      "id": "0-1619509853818",
+      "height": 150,
+      "width": 140,
+      "x": 20,
+      "y": 148,
+      "invisible": false,
+      "contentEditedOn": 1608060691000,
+      "contentEditedBy": {
+        "id": "u1651c4ac9145e4b8497d5982",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "createdOn": 1608060691000,
+      "createdBy": {
+        "id": "u1651c4ac9145e4b8497d5982",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "updatedOn": 1608060691000,
+      "updatedBy": {
+        "id": "u1651c4ac9145e4b8497d5982",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "rotation": 283.3,
+      "stackingOrder": 1,
+      "hidden": true,
+      "hideEditor": true,
+      "hideOwner": true,
+      "instruction": "&lt;p>This is a &lt;strong>test&lt;/strong> of the &lt;u>instructions&lt;/u>&lt;/p>",
+      "locked": true,
+      "lockedByFacilitator": true,
+      "parentId": "0-1619509853818",
+      "presentationIndex": 1,
+      "type": "area",
+      "style": {
+        "backgroundColor": "#FAFAFAFF",
+        "borderColor": "#FAFAFAFF",
+        "borderStyle": "solid",
+        "borderWidth": 7,
+        "titleFontSize": 9
+      },
+      "layout": "free",
+      "showTitle": false,
+      "title": "My area"
+    },
+    ...
+  ],
+  "next": "eyJmaWx0ZXJCeSI6ImFjdGl2ZSIsImV4cGlyYXRpb24iOjE1MTcxMTAxNDYyMTZ9"
+}</pre>
+
+
+<h3>Failure</h3>
+When the call fails, the returned data contains the following fields:
+<ul>
+<li><code>code</code> - A short string indicating the problem</li>
+<li><code>message</code> - A string with details of the problem</li>
+<li><code>details</code> - A JSON object with a more specific <code>code</code> and <code>message</code></li>
+</ul>
+<h4>Example data</h4>
+<pre>
+{
+  "code": "ERROR",
+  "message": "Unknown server error",
+  "details": [
+    {
+      "code": "SUB_ERROR",
+      "message": "Unknown server error"
+    }
+  ]
+}
+</pre>
+
+</div>

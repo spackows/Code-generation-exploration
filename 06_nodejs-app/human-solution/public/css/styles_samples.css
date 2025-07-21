@@ -1,0 +1,52 @@
+
+#samples_div
+{
+margin-top: 80px;
+margin-bottom: 100px;
+}
+
+
+#samples_div h2
+{
+margin-bottom: 30px;
+font-size: 200%;
+font-weight: normal;
+}
+
+#samples_div h3
+{
+margin: 40px 0px 20px 0px;
+font-size: 140%;
+font-weight: normal;
+}
+
+#samples_div h4
+{
+display: none;
+}
+
+#samples_div pre
+{
+margin-bottom: 20px;
+}
+
+
+.language_picker_btn
+{
+margin: 0px;
+padding: 0px 10px 1px 10px;
+background: white;
+border: none;
+color: mediumblue;
+cursor: pointer;
+font-size: 100%;
+letter-spacing: 2px;
+border-right: 1px solid mediumblue;
+}
+
+.selected
+{
+text-decoration: underline;
+}
+
+

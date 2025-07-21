@@ -1,0 +1,323 @@
+
+<h1 class="endpoint_title">Create sticky note</h1>
+<p class="endpoint_description">Creates one or more "sticky note" widgets, adds them to a mural, and then returns an array of corresponding objects in JSON format.</p>
+
+<div class="limitations_div">
+<h2>Limitations</h2>
+<ul>
+<li>A maximum of 1000 sticky notes can be created with one API call</li>
+</ul>
+</div>
+
+<div class="required_scopes_div">
+<h2>Required authorization scopes</h2>
+<ul>
+<li><code>murals:write</code></li>
+</ul>
+</div>
+
+<div class="endpoint_specification_div">
+<h2>Endpoint <span class="request_type_pill get">GET</span></h2>
+<code class="endpoint_url">https://app.mural.co/api/public/&lt;API-version>/murals/&lt;mural-id>/widgets/sticky-note</code>
+<p>Where:</p>
+<ul>
+<li><code>&lt;mural-id></code> is your mural identifier</li>
+<li><code>&lt;API-version></code> is the MURAL API version to use (the only supported version is "v1")</li>
+</ul>
+</div>
+
+<div class="query_parameters_div">
+<h2>Body parameters</h2>
+<ol class="query_parameters_ol">
+<li class="query_parameters_li"><!-- 1. height -->
+<div class="query_parameter"><code>height</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Widget height, in pixels</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Integer</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Sets the height of the sticky note</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When no <code>height</code> is specified, the created widget will be 138 pixels high</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 2. hidden -->
+<div class="query_parameter"><code>hidden</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Whether the created widget is hidden from non-facilitators in the <a href="https://support.mural.co/s/article/about-mural-outlines">mural outline</a></div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Boolean</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When set to true, the created widget is hidden in the outline from mural participants who are not facilitators of the mural</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When <code>hidden</code> is not specified, and if the widget is included in the mural outline, the widget is visible in the outline to all mural participants</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 3. htmlText -->
+<div class="query_parameter"><code>htmlText</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Text on the widget, in HTML format</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Causes HTML formatting to be applied to the appearance of the text on the created widget</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Usage notes <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">
+<div class="long_list_div">
+<ul class="parm_attr_desc_ul">
+<li class="parm_attr_desc_li">If both the <code>htmlText</code> and <code>text</code> parameters are specified, <code>htmlText</code> takes priority</li>
+<li class="parm_attr_desc_li">The HTML styling specified in <code>htmlText</code> takes priority over style attributes specified in the <code>style</code> body parameter</li>
+<li class="parm_attr_desc_li">Supported HTML tags:
+<ul class="parm_attr_desc_ul">
+<li><code>&lt;b></code> - bold text</li>
+<li><code>&lt;i></code> - italic text</li>
+<li><code>&lt;u></code> - underline text</li>
+<li><code>&lt;s></code> - strike text</li>
+<li><code>&lt;ul></code> - unordered list of items</li>
+<li><code>&lt;ol></code> - ordered list of items</li>
+<li><code>&lt;li></code> - list item</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 4. hyperlink -->
+<div class="query_parameter"><code>hyperlink</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">The URL for a link button in the widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">If a URL is specified with the <code>hyperlink</code> parameter, a link button will be included in the created widget</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When <code>hyperlink</code> is not specified, no link button will appear in the created widget</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Usage note       <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Use the <code>hyperlinkTitle</code> parameter to specify a title for the link button</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 5. hyperlinkTitle -->
+<div class="query_parameter"><code>hyperlinkTitle</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">The title for a link button in the widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">The <code>hyperlinkTitle</code> parameter specifies a title for the link button, if a URL is specified with the <code>hyperlink</code> parameter</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">If <code>hyperlink</code> is specified, but <code>hyperlinkTitle</code> is not specified, the URL will be the title of the link button</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Usage note       <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Use the <code>hyperlink</code> parameter to specify a URL for the link button</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 6. instruction -->
+<div class="query_parameter"><code>instruction</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Instructions related to the widget in the mural outline</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Specified instructions appear in the mural outline</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Usage note       <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Only mural facilitators can add a widget to the mural outline</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 7. parentId -->
+<div class="query_parameter"><code>parentId</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">The identifier of an existing widget to be the parent of the created widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Causes the created widget to be a child of the widget specified with <code>parentId</code></div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When no <code>parentId</code> is specified, the created widget has no parent</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 8. presentationIndex -->
+<div class="query_parameter"><code>presentationIndex</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Location of the created widget in the mural outline</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Integer</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Specifies where in the mural outline information about the created widget will appear</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When <code>presentationIndex</code> is not specified, the default is -1, which means the widget is not in the outline</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Usage note       <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Only mural facilitators can add a widget to the mural outline</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 9. rotation -->
+<div class="query_parameter"><code>rotation</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Angle of rotation of the created widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Decimal number &ge; 0</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">The created widget will be rotated by the specified amount when placed on the mural board</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">By default, the widget is placed with no rotation</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 10. shape -->
+<div class="query_parameter"><code>shape</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Shape of the widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Sets the shape of the created widget</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Mandatory</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">The default shape is a rectangle</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Supported values <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">
+<div class="long_list_div">
+<ul class="parm_attr_desc_ul">
+<li class="parm_attr_desc_li"><code>rectangle</code></li>
+<li class="parm_attr_desc_li"><code>circle</code></li>
+</ul>
+</div>
+</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 11. style -->
+<div class="query_parameter"><code>style</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">JSON object specifying the appearance of the widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">JSON structure of key-value pairs</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Sets the appearance of the created widget using style fields similar to CSS attributes</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">A default sticky note is yellow, with black text and no border.</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Supported fields <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">
+<div class="long_list_div">
+<ul class="parm_attr_desc_li">
+<li class="parm_attr_desc_li"><code>backgroundColor</code> - (String) The background color of the widget in hex with alpha format.  Default: #FCFE7DFF</li>
+<li class="parm_attr_desc_li"><code>bold</code> - (Boolean) If true, text is bold.  Default: false</li>
+<li class="parm_attr_desc_li"><code>italic</code> - (Boolean) If true, text is italic.  Default: false</li>
+<li class="parm_attr_desc_li"><code>underline</code> - (Boolean) If true, text is underlined.  Default: false</li>
+<li class="parm_attr_desc_li"><code>strike</code> - (Boolean) If true, text is stuck out.  Default: false</li>
+<li class="parm_attr_desc_li"><code>font</code> - (String) Font-family of text.  Supported values: adelle, blambot-casual, blambot-pro, lint-mccree, marker-felt, museo-slab, proxima-nova, shark-water. Default: proxima-nova</li>
+<li class="parm_attr_desc_li"><code>fontSize</code> - (Integer) Size of text. Supported values: &ge; 0.  Default: 23</li>
+<li class="parm_attr_desc_li"><code>textAlign</code> - (String) Horizontal alignment of text.  Supported values: left, center, right.  Default: center</li>
+<li class="parm_attr_desc_li"><code>border</code> - (Boolean) If true, the widget has a black border.  Default: false</li>
+</ul>
+</div>
+</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 12. stackingOrder -->
+<div class="query_parameter"><code>stackingOrder</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">z-index stacking order of the widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Integer</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">A higher z-index causes the widget to appear in front of (or occluding) widgets with a lower z-index.</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">If no <code>stackingOrder</code> is specified, the created widget has a default stacking order of 1</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 13. tags -->
+<div class="query_parameter"><code>tags</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Array of strings</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">You can add one or more tags to widgets to make analysis and processing easier</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 14. text -->
+<div class="query_parameter"><code>text</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Text on the widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Plain text on the created widget</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 15. title -->
+<div class="query_parameter"><code>title</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Title of the created widget in the mural outline</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">String</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">If the widget is included in the mural outline, what is specified with <code>title</code> is displayed as the title in the mural outline</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 16. width -->
+<div class="query_parameter"><code>width</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Widget width, in pixels</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Integer</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Sets the width of the sticky note</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Optional</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Default behavior <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When no <code>width</code> is specified, the created widget will be 138 pixels wide</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 17. x -->
+<div class="query_parameter"><code>x</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Horizontal position of the created widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Decimal number</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When the created widget is placed on the mural board, the upper-left corner of the widget is placed at the specified <code>x</code> position, in pixels, from the left of the parent widget (or the left of the mural board, if the widget has no parent)</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Mandatory</div></li>
+</ul>
+</li>
+<li class="query_parameters_li"><!-- 18. y -->
+<div class="query_parameter"><code>y</code><span class="parm_attr_colon"> : </span></div><div class="query_parameter_desc">Vertical position of the created widget</div>
+<ul class="parm_attr_ul" style="display: none;">
+<li class="parm_attr_li"><div class="parm_attr">Data type        <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Decimal number</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Effect           <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">When the created widget is placed on the mural board, the upper-left corner of the widget is placed at the specified <code>y</code> position, in pixels, from the top of the parent widget (or the top of the mural board, if the widget has no parent)</div></li>
+<li class="parm_attr_li"><div class="parm_attr">Required         <span class="parm_attr_colon"> : </span></div><div class="parm_attr_desc">Mandatory</div></li>
+</ul>
+</li>
+</ol>
+</div>
+
+<div class="responses_div">
+<h2>Response</h2>
+
+<h3>Success (HTTP 200)</h3>
+When the call is successful, the returned data contains the following fields:
+<ul>
+<li><code>value</code> - An array of objects in JSON structure</li>
+</ul>
+<h4>Example data</h4>
+<pre>
+{
+  "value": [
+    {
+      "id": "0-1619509853818",
+      "height": 150,
+      "width": 140,
+      "x": 20,
+      "y": 148,
+      "invisible": false,
+      "contentEditedOn": 1608060691000,
+      "contentEditedBy": {
+        "id": "u1651c4ac9145e4b8497d5982",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "createdOn": 1608060691000,
+      "createdBy": {
+        "id": "u1651c4ac9145e4b8497d5982",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "updatedOn": 1608060691000,
+      "updatedBy": {
+        "id": "u1651c4ac9145e4b8497d5982",
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "rotation": 283.3,
+      "stackingOrder": 1,
+      "hidden": true,
+      "hideEditor": true,
+      "hideOwner": true,
+      "instruction": "&lt;p>This is a &lt;strong>test&lt;/strong> of the &lt;u>instructions&lt;/u>&lt;/p>",
+      "locked": true,
+      "lockedByFacilitator": true,
+      "parentId": "0-1619509853818",
+      "presentationIndex": 1,
+      "type": "area",
+      "style": {
+        "backgroundColor": "#FAFAFAFF",
+        "borderColor": "#FAFAFAFF",
+        "borderStyle": "solid",
+        "borderWidth": 7,
+        "titleFontSize": 9
+      },
+      "layout": "free",
+      "showTitle": false,
+      "title": "My area"
+    },
+    ...
+  ]
+}</pre>
+
+
+<h3>Failure</h3>
+When the call fails, the returned data contains the following fields:
+<ul>
+<li><code>code</code> - A short string indicating the problem</li>
+<li><code>message</code> - A string with details of the problem</li>
+<li><code>details</code> - A JSON object with a more specific <code>code</code> and <code>message</code></li>
+</ul>
+<h4>Example data</h4>
+<pre>
+{
+  "code": "ERROR",
+  "message": "Unknown server error",
+  "details": [
+    {
+      "code": "SUB_ERROR",
+      "message": "Unknown server error"
+    }
+  ]
+}
+</pre>
+
+</div>
+
+

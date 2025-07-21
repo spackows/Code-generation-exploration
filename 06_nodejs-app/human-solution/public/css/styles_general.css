@@ -1,0 +1,51 @@
+
+body
+{
+margin: 0px;
+padding: 0px;
+position: absolute;
+top: 0px;
+right: 0px;
+bottom: 0px;
+left: 0px;
+font-family: Helvetica, Arial, sans-serif;
+background: none;
+overflow-y: none;
+color: #192231;
+}
+
+
+h1, h2, h3, h4, p, ul
+{
+margin: 0px;
+padding: 0px;
+}
+
+
+li
+{
+margin: 0px 0px 10px 10px;
+}
+
+a, a:hover, a:visited, a:active
+{
+color: mediumblue;
+}
+
+
+code, pre
+{
+font-size: 90%;
+padding: 3px 5px 2px 5px;
+background: whitesmoke;
+font-family: Courier New;
+}
+
+
+pre
+{
+padding: 10px;
+max-height: 250px;
+overflow-y: auto;
+}
+

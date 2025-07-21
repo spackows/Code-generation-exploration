@@ -1,0 +1,76 @@
+
+article
+{
+margin: 0x;
+padding: 30px 40px 30px 30px;
+position: absolute;
+top: 45px;
+right: 320px;
+bottom: 0px;
+left: 230px;
+overflow-y: auto;
+border-left: 1px solid lightgrey;
+}
+
+
+.endpoint_title
+{
+margin-bottom: 20px;
+font-size: 260%;
+font-weight: normal;
+}
+
+
+.request_type_pill
+{
+margin: -0px 0px 0px 15px;
+padding: 5px 20px 4px 20px;
+vertical-align: middle;
+color: white;
+background: green;
+border: 1px solid green;
+border-radius: 15px;
+font-size: 47%;
+}
+
+.endpoint_description
+{
+margin-bottom: 30px;
+}
+
+
+.limitations_div, .required_scopes_div
+{
+margin-bottom: 30px;
+}
+
+
+.limitations_div h2, .required_scopes_div h2
+{
+margin-bottom: 8px;
+font-size: 115%;
+font-weight: normal;
+}
+
+
+.limitations_div ul
+{
+}
+
+
+.limitations_div li
+{
+margin-left: 15px;
+}
+
+
+.required_scopes_div ul
+{
+list-style: none;
+}
+
+.required_scopes_div li
+{
+margin: 10px 0px 0px 0px;
+}
+

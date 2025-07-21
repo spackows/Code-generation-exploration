@@ -1,0 +1,50 @@
+
+.responses_div
+{
+margin-top: 80px;
+}
+
+
+.responses_div h2
+{
+margin-bottom: 30px;
+font-size: 200%;
+font-weight: normal;
+}
+
+
+.responses_div h3
+{
+margin: 0px 0px 20px 0px;
+font-size: 150%;
+font-weight: normal;
+}
+
+
+.responses_div ul
+{
+margin: 10px 0px 0px 0px;
+}
+
+
+.responses_div li
+{
+margin-left: 15px;
+}
+
+
+.responses_div h4
+{
+margin: 25px 0px 15px 0px;
+font-size: 120%;
+font-weight: normal;
+}
+
+.responses_div pre
+{
+margin: 0px 0px 50px 0px;
+}
+
+
+
+

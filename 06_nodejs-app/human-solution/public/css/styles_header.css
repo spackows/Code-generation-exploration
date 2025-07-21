@@ -1,0 +1,17 @@
+
+header
+{
+margin: 0x;
+padding: 10px 0px 10px 30px;
+position: absolute;
+top: 0px;
+right: 0px;
+height: 24px;
+left: 0px;
+font-size: 20px;
+font-weight: bold;
+background: #FF0062;
+color: white;
+/* border: 1px solid blue; */
+}
+

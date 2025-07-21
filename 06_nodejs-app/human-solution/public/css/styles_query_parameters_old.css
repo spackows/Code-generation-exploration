@@ -1,0 +1,127 @@
+
+
+.long_list_div
+{
+height: 120px;
+max-height: 120px;
+overflow-y: auto;
+}
+
+
+.query_parameters_div
+{
+margin-top: 70px;
+}
+
+
+.query_parameters_div h2
+{
+margin-bottom: 30px;
+font-size: 200%;
+font-weight: normal;
+}
+
+
+.query_parameters_ol
+{
+margin: 0px;
+padding: 0px;
+list-style: none;
+}
+
+
+.query_parameters_li
+{
+margin: 0px 0px 30px 0px;
+}
+
+
+.show_hide_btn
+{
+float: left;
+margin: -7px 20px 0px 0px;
+background: white;
+color: mediumblue;
+border: none;
+cursor: pointer;
+font-size: 160%;
+}
+
+.query_parameter
+{
+float: left;
+width: 140px;
+min-width: 140px;
+margin-right: 10px;
+/* border: 1px solid purple; */
+}
+
+
+.query_parameter code
+{
+font-size: 130%;
+padding: 3px 10px 4px 10px;
+}
+
+
+.parm_attr_ul
+{
+margin: 25px 0px 40px 40px;
+padding: 0px;
+list-style: none;
+border: 1px solid lightgrey;
+border-radius: 5px;
+}
+
+
+.parm_attr_ul li
+{
+margin: 0px;
+}
+
+
+.parm_attr_ul li:nth-child( odd )
+{
+background-color: whitesmoke;
+}
+
+
+.parm_attr
+{
+margin: 0px 15px 0px 0px;
+padding: 8px 0px 8px 20px;
+float: left;
+vertical-align: top;
+width: 140px;
+min-width: 140px;
+/* border: 1px solid green; */
+}
+
+
+.parm_attr_colon
+{
+float: right;
+}
+
+
+.parm_attr_desc
+{
+margin: 0px;
+padding: 8px 20px 8px 5px;
+/* border: 1px solid red; */
+}
+
+
+.parm_attr_desc_ul
+{
+margin: 0px 0px 0px 10px;
+padding: 0px;
+list-style-type: "\2022";
+}
+
+.parm_attr_desc_ul li
+{
+padding: 0px 0px 0px 10px;
+}
+
+

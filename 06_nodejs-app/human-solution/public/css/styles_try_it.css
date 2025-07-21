@@ -1,0 +1,16 @@
+
+#try_it_div
+{
+margin: 0x;
+padding: 30px;
+position: absolute;
+top: 45px;
+right: 0px;
+bottom: 0px;
+width: 260px;
+overflow-y: auto;
+font-style: italic;
+font-size: 120%;
+color: grey;
+}
+

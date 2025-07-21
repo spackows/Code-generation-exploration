@@ -1,0 +1,107 @@
+body
+{
+margin: 0;
+padding: 0;
+overflow: hidden;
+font-family: "Segoe UI", "Arial", "Helvetica Neue", sans-serif;
+}
+
+/* Add your CSS styles here */
+
+header
+{
+width: 100%;
+height: 60px;
+background: #ff69b4;
+color: white;
+font-size: 16px;
+display: flex;
+align-items: center;
+}
+
+#header_title
+{
+margin-left: 32px;
+}
+
+nav
+{
+position: absolute;
+top: 60px;
+left: 0;
+width: 20%;
+height: calc( 100% - 60px );
+background: #f8f8f8;
+overflow-y: auto;
+border-right: 1px solid #ddd;
+}
+
+nav ul
+{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+nav li
+{
+padding: 8px 16px;
+}
+
+nav li a
+{
+color: #333;
+text-decoration: none;
+display: block;
+}
+
+nav li a:hover
+{
+background: #ffe4f2;
+color: #ff69b4;
+}
+
+article
+{
+position: absolute;
+top: 60px;
+left: 20%;
+width: 80%;
+height: calc( 100% - 60px );
+overflow-y: auto;
+padding: 24px;
+box-sizing: border-box;
+background: #fff;
+}
+
+.query_parameters_ol
+{
+display: table;
+width: 100%;
+padding: 0;
+margin: 0 0 16px 0;
+}
+
+.query_parameters_ol > li
+{
+display: table-row;
+list-style: none;
+}
+
+.query_parameter
+{
+display: table-cell;
+vertical-align: middle;
+margin-right: 8px;
+padding: 4px 8px;
+font-weight: bold;
+border-bottom: 1px solid #eee;
+}
+
+.query_parameter_desc
+{
+display: table-cell;
+vertical-align: middle;
+padding: 4px 8px;
+border-bottom: 1px solid #eee;
+}
