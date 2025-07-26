@@ -1,15 +1,15 @@
 
 url = "https://developers.mural.co/public/reference/getmuralwidgets"
-out_file_name = "read-widgets_MURAL";
+out_file_name = "read-widgets_MURAL"
 
 #url = "https://developers.mural.co/public/reference/createstickynote"
-#out_file_name = "create-sticky-note_MURAL";
+#out_file_name = "create-sticky-note_MURAL"
 
 #url = "http://localhost:8080/?topic_id=read-widgets"
-#out_file_name = "read-widgets_mine";
+#out_file_name = "read-widgets_mine"
 
 #url = "http://localhost:8080/?topic_id=create-sticky-note"
-#out_file_name = "create-sticky-note_mine";
+#out_file_name = "create-sticky-note_mine"
 
 import requests
 print( url )
