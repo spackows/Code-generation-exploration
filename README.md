@@ -106,6 +106,31 @@ Users can drag the menu wider or narrower.</p>
 </ul>
 </td>
 </tr>
+<tr><!-- 06_nodejs-app -->
+<td valign="top">
+<p><a href="06_nodejs-app/README.md">06_nodejs-app</a></p>
+<img src="06_nodejs-app/images/human-solution.png" width="250" alt="Example">
+</td>
+<td valign="top">
+<p>Same as above, editing multiple files in the directory</p>
+</td>
+<td valign="top">
+<p>Generating a Node.js (Express) web app to serve API documentation.</p>
+<p>Will make my own copy of the reference topics for the MURAL API endpoints <a href="https://developers.mural.co/public/reference/getmuralwidgets">Read widgets</a>, and <a href="https://developers.mural.co/public/reference/createstickynote">Create sticky note</a>.</p>
+</td>
+</tr>
+<tr><!-- 07_MURAL-API-better-docs -->
+<td valign="top">
+<p><a href="07_MURAL-API-better-docs/README.md">07_MURAL-API-better-docs</a></p>
+<img src="07_MURAL-API-better-docs/images/scraped-comparison.png" width="250" alt="Example">
+</td>
+<td valign="top">
+<p>Same as in <a href="05_MURAL-API/README.md">05_MURAL-API</a> but using <a href="https://code.visualstudio.com/docs/copilot/chat/copilot-chat-context#_reference-web-content">#fetch</a> with the local doc app from <a href="06_nodejs-app/README.md">06_nodejs-app</a></p>
+</td>
+<td valign="top">
+<p>Comparing the correctness of Copilot-generated code when using the MURAL official documentation as context vs. using the local doc app as context.</p>
+</td>
+</tr>
 </table>
 
 <p>&nbsp;</p>
